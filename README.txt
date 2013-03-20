@@ -27,9 +27,10 @@ Both of these experiments used the same MySQL instance as their datasource.
 
 The Java classes for each experiment are outlined as follows:
 Experiment1 - Insertion tests.
-Experiment2 - Retrieval tests.
-Experiment3 - Update tests.
-Experiment4 - Deletion tests.
-Experiment5 - Join query tests.
+Experiment2 - Retrieval tests for objects.
+Experiment3 - Retrieval tests using SQL for obtaining primitive data.
+Experiment4 - Update tests.
+Experiment5 - Deletion tests.
+Experiment6 - Join query tests.
 
 
