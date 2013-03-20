@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="BINDDB"/>
+  <table-filter match-name="DomainData"/>
+  <table-filter match-name="NameServer"/>
+  <table-filter match-name="IPAddress"/>
+  <table-filter match-name="ResourceRecord"/>
+  <table-filter match-name="Domain"/>
+  <table-filter match-name="IPAssignment"/>
+  <table-filter match-name="Subnet"/>
+  <table-filter match-name="Network"/>
+  <table-filter match-name="DNSHosting"/>
+</hibernate-reverse-engineering>

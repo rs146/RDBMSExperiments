@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 11, 2013 5:20:49 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BINDDB" name="hibernatepojos.ResourceRecord" table="ResourceRecord">
+    <id name="id" type="java.lang.Integer">
+      <column name="id"/>
+      <generator class="identity"/>
+    </id>
+    <discriminator column="resourceRecordType" type="string"/>
+    <property name="ttl" type="java.lang.Integer">
+      <column name="ttl"/>
+    </property>
+    <property name="hostname" type="string">
+      <column length="40" name="hostname"/>
+    </property>
+    <property name="classOfData" type="string">
+      <column length="20" name="classOfData"/>
+    </property>
+    <set inverse="true" name="domainData">
+      <key column="resourceRecord"/>
+      <one-to-many class="hibernatepojos.DomainData"/>
+    </set>
+    <subclass discriminator-value="FRM" name="hibernatepojos.FandRMapping">
+      <property name="type" type="string">
+        <column length="20" name="type"/>
+      </property>
+      <set inverse="true" name="ipAssignments">
+        <key column="fandRMapping"/>
+        <one-to-many class="hibernatepojos.Ipassignment"/>
+      </set>
+    </subclass>
+    <subclass discriminator-value="SRV" name="hibernatepojos.SRV">
+      <property name="preference" type="java.lang.Integer">
+        <column name="preference"/>
+      </property>
+      <property name="srv" type="java.lang.Boolean">
+        <column name="srv"/>
+      </property>
+      <property name="name" type="string">
+        <column length="20" name="name"/>
+      </property>
+      <property name="service" type="string">
+        <column length="20" name="service"/>
+      </property>
+      <property name="protocol" type="string">
+        <column length="20" name="protocol"/>
+      </property>
+      <property name="weight" type="java.lang.Integer">
+        <column name="weight"/>
+      </property>
+      <property name="port" type="java.lang.Integer">
+        <column name="port"/>
+      </property>
+    </subclass>
+    <subclass discriminator-value="CNM" name="hibernatepojos.CNAME">
+      <property name="nickname" type="string">
+        <column length="40" name="nickname"/>
+      </property>
+    </subclass>
+    <subclass discriminator-value="TXT" name="hibernatepojos.TXT">
+      <property name="information" type="string">
+        <column length="50" name="information"/>
+      </property>
+    </subclass>
+  </class>
+</hibernate-mapping>

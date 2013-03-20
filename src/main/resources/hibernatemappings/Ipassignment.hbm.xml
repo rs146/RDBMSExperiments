@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 11, 2013 5:20:49 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BINDDB" name="hibernatepojos.Ipassignment" table="IPAssignment">
+    <id name="id" type="java.lang.Integer">
+      <column name="id"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="hibernatepojos.FandRMapping" column="fandRMapping" name="fandRmapping"/>
+    <many-to-one class="hibernatepojos.Ipaddress" column="ipAddress" name="ipAddress"/>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 11, 2013 5:20:49 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BINDDB" name="hibernatepojos.NameServer" table="NameServer">
+    <id name="hostname" type="string">
+      <column length="40" name="hostname"/>
+      <generator class="native"/>
+    </id>
+    <property name="ttl" type="java.lang.Integer">
+      <column name="ttl"/>
+    </property>
+    <property name="class_" type="string">
+      <column length="20" name="class"/>
+    </property>
+    <property name="ipAddress" type="string">
+      <column length="20" name="ipAddress"/>
+    </property>
+    <set inverse="true" name="dnshostings">
+      <key column="nameServer"/>
+      <one-to-many class="hibernatepojos.Dnshosting"/>
+    </set>
+  </class>
+</hibernate-mapping>

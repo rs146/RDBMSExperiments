@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 11, 2013 5:20:49 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BINDDB" name="hibernatepojos.Network" table="Network">
+    <id name="id" type="java.lang.Integer">
+      <column name="id"/>
+      <generator class="identity"/>
+    </id>
+    <property name="version" type="string">
+      <column length="30" name="version"/>
+    </property>
+    <property name="networkAddr" type="string">
+      <column length="20" name="networkAddr"/>
+    </property>
+    <property name="netname" type="string">
+      <column length="40" name="netname"/>
+    </property>
+    <set inverse="true" name="subnets">
+      <key column="network"/>
+      <one-to-many class="hibernatepojos.Subnet"/>
+    </set>
+  </class>
+</hibernate-mapping>

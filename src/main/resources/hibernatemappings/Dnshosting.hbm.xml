@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 11, 2013 5:20:49 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BINDDB" name="hibernatepojos.Dnshosting" table="DNSHosting">
+    <id name="id" type="java.lang.Integer">
+      <column name="id"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="hibernatepojos.Domain" column="domain" name="domain"/>
+    <many-to-one class="hibernatepojos.NameServer" column="nameServer"
+                name="nameServer"/>
+    <property name="type" type="string">
+      <column length="20" name="type"/>
+    </property>
+    <property name="allowQuery" type="java.lang.Boolean">
+      <column name="allowQuery"/>
+    </property>
+    <property name="allowUpdate" type="java.lang.Boolean">
+      <column name="allowUpdate"/>
+    </property>
+    <property name="allowTransfer" type="java.lang.Boolean">
+      <column name="allowTransfer"/>
+    </property>
+  </class>
+</hibernate-mapping>

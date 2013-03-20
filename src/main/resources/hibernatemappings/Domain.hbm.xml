@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 11, 2013 5:20:49 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="BINDDB" name="hibernatepojos.Domain" table="Domain">
+    <id name="domainName" type="string">
+      <column length="40" name="domainName"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="class_" type="string">
+      <column length="20" name="class"/>
+    </property>
+    <property name="adminContact" type="string">
+      <column length="40" name="adminContact"/>
+    </property>
+    <property name="serial" type="java.lang.Integer">
+      <column name="serial"/>
+    </property>
+    <property name="refresh" type="java.lang.Integer">
+      <column name="refresh"/>
+    </property>
+    <property name="retry" type="java.lang.Integer">
+      <column name="retry"/>
+    </property>
+    <property name="expire" type="java.lang.Integer">
+      <column name="expire"/>
+    </property>
+    <property name="ttl" type="java.lang.Integer">
+      <column name="ttl"/>
+    </property>
+    <set inverse="true" name="dnshostings">
+      <key column="domain"/>
+      <one-to-many class="hibernatepojos.Dnshosting"/>
+    </set>
+    <set inverse="true" name="domainData">
+      <key column="domain"/>
+      <one-to-many class="hibernatepojos.DomainData"/>
+    </set>
+  </class>
+</hibernate-mapping>

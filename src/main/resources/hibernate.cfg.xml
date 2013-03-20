@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://192.168.1.172:3306/BINDDB</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">rahul</property>
+    <mapping resource="hibernatemappings/Dnshosting.hbm.xml"/>
+    <mapping resource="hibernatemappings/Ipassignment.hbm.xml"/>
+    <mapping resource="hibernatemappings/Network.hbm.xml"/>
+    <mapping resource="hibernatemappings/Ipaddress.hbm.xml"/>
+    <mapping resource="hibernatemappings/DomainData.hbm.xml"/>
+    <mapping resource="hibernatemappings/NameServer.hbm.xml"/>
+    <mapping resource="hibernatemappings/Subnet.hbm.xml"/>
+    <mapping resource="hibernatemappings/ResourceRecord.hbm.xml"/>
+    <mapping resource="hibernatemappings/Domain.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>
