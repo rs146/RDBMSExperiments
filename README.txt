@@ -33,4 +33,6 @@ Experiment4 - Update tests.
 Experiment5 - Deletion tests.
 Experiment6 - Join query tests.
 
+[![Build Status](https://api.travis-ci.org/rs146/RDBMSExperiments.png)](https://travis-ci.org/rs146/RDBMSExperiments)
+
 
