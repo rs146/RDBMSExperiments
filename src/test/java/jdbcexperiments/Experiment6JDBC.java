@@ -43,7 +43,7 @@ public class Experiment6JDBC {
                     .log(Level.SEVERE, null, ex);
         }
     }
-    
+
     @Test
     public void getNameServers() {
         try {
@@ -70,6 +70,37 @@ public class Experiment6JDBC {
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
+        }
+    }
+ 
+    @Test
+    public void getIPAddresses() {
+        try {
+            List<String> ipAddresses = new ArrayList<String>();
+            String sqlCheck = "SELECT EXISTS(SELECT * FROM ResourceRecord WHERE " 
+                    + "ResourceRecordType = 'FRM' AND id = 1)";
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery(sqlCheck);
+            rs.next();
+            if (rs.getInt(1) == 1){
+                String sql = "SELECT * FROM IPAssignment WHERE fandRMapping = 1";
+                Statement stmt1 = con.createStatement();
+                ResultSet rs1 = stmt1.executeQuery(sql);
+                while (rs1.next()){
+                    String sql2 = "SELECT * FROM IPAddress WHERE id = "
+                            + rs1.getInt(3);
+                    Statement stmt2 = con.createStatement();
+                    ResultSet rs2 = stmt2.executeQuery(sql2);
+                    while (rs2.next()){
+                        ipAddresses.add(rs2.getString(2));
+                    }
+                }
+            }
+            for (String ipAddr : ipAddresses){
+                System.out.println(ipAddr);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace(System.out);
         }
     }
 }
