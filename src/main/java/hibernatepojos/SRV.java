@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package hibernatepojos;
 
 import java.util.Set;
@@ -17,7 +13,6 @@ import java.util.Set;
  * @author rahulsingh
  */
 public class SRV extends ResourceRecord implements java.io.Serializable {
-
     private Integer preference;
     private Boolean srv;
     private String name;
@@ -26,8 +21,7 @@ public class SRV extends ResourceRecord implements java.io.Serializable {
     private Integer weight;
     private Integer port;
     
-    public SRV(){
-    }
+    public SRV(){}
     
     public SRV(String resourceRecordType, Integer ttl, 
             String hostname, String classOfData, Set<DomainData> domainData,

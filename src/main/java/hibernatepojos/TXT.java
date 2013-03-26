@@ -1,22 +1,15 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package hibernatepojos;
 
 import java.util.Set;
 
 /**
  * Subclass of ResourceRecord. Not generated.
- *
  * @author rahulsingh
  */
 public class TXT extends ResourceRecord implements java.io.Serializable {
-
     private String information;
 
-    public TXT() {
-    }
+    public TXT() {}
 
     public TXT(String resourceRecordType, Integer ttl,
             String hostname, String classOfData, Set<DomainData> domainData,

@@ -12,12 +12,10 @@ import java.util.Set;
  * @author rahulsingh
  */
 public class FandRMapping extends ResourceRecord implements java.io.Serializable {
-
     private String type;
     private Set<Ipassignment> ipAssignments;
 
-    public FandRMapping() {
-    }
+    public FandRMapping() {}
 
     public FandRMapping(String resourceRecordType, Integer ttl, String hostname,
             String classOfData, Set<DomainData> domainData, String type, Set<Ipassignment> ipAssignments) {
