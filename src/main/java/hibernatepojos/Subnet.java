@@ -1,6 +1,5 @@
 package hibernatepojos;
 // Generated Feb 11, 2013 5:20:48 PM by Hibernate Tools 3.2.1.GA
-
 import java.util.Set;
 
 /**

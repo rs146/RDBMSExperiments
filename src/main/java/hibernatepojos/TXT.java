@@ -1,5 +1,4 @@
 package hibernatepojos;
-
 import java.util.Set;
 
 /**
